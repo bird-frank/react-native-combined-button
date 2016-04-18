@@ -1,5 +1,6 @@
 import React, {
     TouchableOpacity,
+    Component,
     Text,
     Image,
     PropTypes,
