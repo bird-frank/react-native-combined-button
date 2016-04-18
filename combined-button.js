@@ -5,10 +5,9 @@ import React, {
     Text,
     Image,
     PropTypes,
+    InteractionManager,
     StyleSheet
 } from 'react-native';
-
-import InteractionManager from 'InteractionManager';
 
 const FLEX_DIRECTION ={ 'top': 'column',
                       'right': 'row',
@@ -33,12 +32,11 @@ export default class CombinedButton extends Component {
         for (ehProp of EVENT_HANDLER_PROP_NAMES) {
             if ( this.props[ehProp]) {
                 const handler = this.props[ehProp];
-                eventHandlers[ehProp] = (args)=> {
-                    InteractionManager.runAfterInteractions(()=> handler(args) );
+                eventHandlers[ehProp] = ()=> {
+                    InteractionManager.runAfterInteractions(handler);
                 }
             }
         }
-
 
         const btnStyle = [styles.container, style, { 'flexDirection': FLEX_DIRECTION[iconPosition]}];
 
