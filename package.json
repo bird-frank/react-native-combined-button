@@ -1,0 +1,24 @@
+{
+  "name": "react-native-combined-button",
+  "version": "0.1.0",
+  "description": "A button component with icon and text for react-native app.",
+  "main": "combined-button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bird-frank/react-native-combined-button.git"
+  },
+  "keywords": [
+    "react-native",
+    "button"
+  ],
+  "author": "bird.frank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bird-frank/react-native-combined-button/issues"
+  },
+    "homepage": "https://github.com/bird-frank/react-native-combined-button#readme"
+
+}
