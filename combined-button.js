@@ -38,7 +38,13 @@ export default class CombinedButton extends Component {
             }
         }
 
-        const btnStyle = [styles.container, style, { 'flexDirection': FLEX_DIRECTION[iconPosition]}];
+        let btnStyle = [styles.container];
+        if ( typeof style == 'Array' ) {
+            btnStyle = btnStyle.concat(style);
+        } else {
+            btnStyle.push(style);
+        }
+        btnStyle.push( { 'flexDirection': FLEX_DIRECTION[iconPosition]});
 
         const containerProps = Object.assign({}, this.props, eventHandlers, { style: btnStyle });
 
