@@ -5,10 +5,11 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
+    "main": "./combined-button.js"
   "dependencies": {
     "react": "^0.14.8",
       "react-native": "^0.23.1",
-      "react-native-combined-button": "^0.1.0"
+      "react-native-combined-button": "git://github.com/bird-frank/react-native-combined-button#master"
 
   }
 }

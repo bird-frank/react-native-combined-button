@@ -13,7 +13,7 @@ import React, {
     Alert
 } from 'react-native';
 
-import CombinedButton from './react-native-combined-button';
+import CombinedButton from 'react-native-combined-button';
 
 function alert(message) {
     Alert.alert( 'Message',
