@@ -29,6 +29,9 @@ class CombinedButtonExample extends Component {
               <CombinedButton style={styles.buttonStyle}
                               textStyle={styles.textStyle}
                               text="Set Style" />
+              <CombinedButton style={[styles.buttonStyle, { backgroundColor: '#5D5D5D'}]}
+                              textStyle={styles.textStyle}
+                              text="Array Style" />
               <View style={styles.buttonRow}>
                 <CombinedButton style={styles.iconBtn}
                                 iconPosition="top"
@@ -44,10 +47,6 @@ class CombinedButtonExample extends Component {
                                 icon={require('./img/ic_launcher.png')} />
               </View>
 
-              <CombinedButton style={styles.buttonStyle}
-                              textStyle={styles.textStyle}
-                              btnStyle={styles.largeBtn}
-                              text="Set Style" />
               <View style={styles.buttonRow}>
                 <CombinedButton style={[styles.iconBtn, { 'alignSelf': 'stretch'}]}
                                 iconStyle={styles.largeBtn}
