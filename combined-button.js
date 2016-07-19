@@ -1,10 +1,9 @@
-import React, {
+import React, { Component, PropTypes } from 'react';
+import {
     View,
-    Component,
     TouchableOpacity,
     Text,
     Image,
-    PropTypes,
     InteractionManager,
     StyleSheet
 } from 'react-native';
@@ -20,21 +19,17 @@ export default class CombinedButton extends Component {
     static propTypes = {
         text: PropTypes.string,
         iconPosition: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
-        style: View.propTypes.style
+        style: PropTypes.any
     };
 
     render() {
         const { style, textStyle, iconStyle, text, icon, iconPosition: iconPosition='top' } = this.props;
 
-        console.log(typeof icon);
-
         let eventHandlers = {};
         for (ehProp of EVENT_HANDLER_PROP_NAMES) {
             if ( this.props[ehProp]) {
                 const handler = this.props[ehProp];
-                eventHandlers[ehProp] = ()=> {
-                    InteractionManager.runAfterInteractions(handler);
-                }
+                eventHandlers[ehProp] = handler;
             }
         }
 
@@ -50,13 +45,13 @@ export default class CombinedButton extends Component {
 
         return (
             <TouchableOpacity {...containerProps} >
-              {( 'top' == iconPosition || 'left' == iconPosition) &&
+              {( 'top' == iconPosition || 'left' == iconPosition) && icon && 
                   <Image style={[styles.iconStyle, iconStyle]}
                      source={icon} /> }
               {text && text != '' && 
                   <Text style={[styles.textStyle, textStyle]}>{this.props.text}</Text>
               }
-              {('bottom' == iconPosition || 'right' == iconPosition) &&
+              {('bottom' == iconPosition || 'right' == iconPosition) && icon &&
                   <Image style={[styles.iconStyle, iconStyle]}
                      source={icon} /> }
             </TouchableOpacity>

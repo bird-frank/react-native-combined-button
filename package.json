@@ -1,10 +1,18 @@
 {
   "name": "react-native-combined-button",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A button component with icon and text for react-native app.",
   "main": "combined-button.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "node_modules"
+    ],
+    "verbose": true,
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
@@ -19,6 +27,19 @@
   "bugs": {
     "url": "https://github.com/bird-frank/react-native-combined-button/issues"
   },
-    "homepage": "https://github.com/bird-frank/react-native-combined-button#readme"
-
+  "homepage": "https://github.com/bird-frank/react-native-combined-button#readme",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-native": "^0.29.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^13.2.2",
+    "babel-plugin-transform-regenerator": "^6.9.0",
+    "babel-preset-react-native": "^1.9.0",
+    "enzyme": "^2.4.1",
+    "jest-cli": "^13.2.3",
+    "react-addons-test-utils": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-native-mock": "^0.2.4"
+  }
 }
